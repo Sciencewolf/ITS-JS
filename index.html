@@ -8,10 +8,66 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body onload="load()">
-    <!-- <script type="text/javascript">
-        // console.log("Hello, World!")
+    <script type="text/javascript">
+        console.log("Hello, World!")
         document.write("Hello, World!")
-    </script> -->
+    </script>
+
+    <button onclick="show()">Click Me!</button>
+
+    <p id="text">hello</p>
+
+    <script>
+
+        const p = document.createElement('p')
+        p.id = "t"
+        p.innerHTML = "Hello Me!"
+
+        const body = document.querySelector('body')
+        body.appendChild(p)
+
+        document.addEventListener('click', () => {
+            document.body.style.backgroundColor = "red"
+        }) 
+
+        const p_tag = document.getElementById('text')
+
+        p_tag.addEventListener('click', () => {
+            p_tag.style.backgroundColor = "yellow"
+        })
+
+        p_tag.addEventListener('dblclick', () => {
+            p_tag.style.backgroundColor = "blue"
+        })
+
+        p_tag.addEventListener('mouseout', () => {
+            p_tag.style.backgroundColor = "green"
+        })
+
+        p_tag.addEventListener('mouseover', () => {
+            p_tag.style.backgroundColor = "red"
+        })
+
+
+        const field = document.createElement('input')
+        
+        field.addEventListener('change', () => {
+            field.style.backgroundColor = "blue"
+        })
+
+        field.addEventListener('focus', () => {
+            field.style.backgroundColor = "red"
+        })
+
+        field.addEventListener('blur', () => {
+            field.style.backgroundColor = "silver"
+        })
+
+        body.appendChild(field)
+
+
+
+    </script>
     
 </body>
 </html>

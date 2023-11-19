@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div>  // elso feladat
+        <p>a</p>
+        <p>b</p>
+    </div>
+    <div>
+        <p>c</p>
+        <p>d</p>
+    </div>
+
+    <div id="intro"> // masodik feladat
+        <p>fsd</p>
+    </div>
+    <div>
+        <p>fsd</p>
+    </div>
+    <p id="text">Text</p> // 0 feladat
+
+    <div class="big">
+        <div id="one"></div>
+        <div id="two"></div>
+    </div>
+    <button id="btn-move">Start</button>
+    <button id="btn-stop-move">Stop</button>
+
+    <script defer>
+        window.onload = () => {
+            const p = document.getElementById('text')
+            if(p === null) alert("No p tag") // hogyna nincs p tag akkor fut le
+            // alert(p.nodeName)
+            // alert(p)
+        }
+
+        const divs = document.querySelectorAll('div') //elso feladat
+
+        for(let i = 0;i<divs.length;i++) {
+            if(i === 1) {
+                console.log(divs[i].childElementCount); // masodik elem
+            }
+        }
+
+        const firstdiv = document.getElementById('intro') // masodik feladat
+        firstdiv.style.backgroundColor = "yellow"
+
+        const seconddiv = document.querySelectorAll('div')[1]
+        seconddiv.style.color = "blue"
+
+
+        // const item = document.getElementById('heading1') // feladat 3, nincs html kod
+        // item.style.textAlign = "left"
+        // item.style.fontSize = "15px"
+        // item.style.fontFamily = "Arial"
+
+        // const allItems = document.querySelectorAll('div')
+        // allItems.forEach(div => {
+        //     div.style.backgroundColor = "blue"
+        // })
+
+        // const allItems2 = document.querySelectorAll('p')
+        // allItems2.forEach(p => {
+        //     p.style.textShadow = "1px 4px"
+        // })
+
+        const btn = document.querySelector('button') // 4 feladat
+        btn.addEventListener('click', () => {
+            setInterval(() => {
+                const big = document.querySelector('.big') 
+                const insideDivs = document.querySelectorAll('.big > *')
+
+                insideDivs.forEach(div => {
+                    let randomPos = Math.floor(Math.random() * 61) // 0-60
+                    div.style.top = `${randomPos}px`
+                    div.style.left = `${randomPos}px`
+                })
+            }, 1000)
+            
+        })
+
+        const btn_stop = document.getElementById('btn-stop-move')
+        btn_stop.addEventListener('click', () => {
+            // stop animation
+        })
+
+        
+    </script>
+</body>
+</html>

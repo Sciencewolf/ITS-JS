@@ -1,21 +1,21 @@
 function load() {
-    // let name = prompt("Your name")
-    // let address = prompt("Address")
-    // let phoneNumber = prompt("phoneNumber")
-    // let city = prompt("city")
+    let name = prompt("Your name")
+    let address = prompt("Address")
+    let phoneNumber = prompt("phoneNumber")
+    let city = prompt("city")
 
-    // console.log(name);
-    // console.log(address);
-    // console.log(phoneNumber);
-    // console.log(city);
-    // console.log(name, address, phoneNumber);
+    console.log(name);
+    console.log(address);
+    console.log(phoneNumber);
+    console.log(city);
+    console.log(name, address, phoneNumber);
 
-    // test()
-    // triangle()
-    // calculator()
+    test()
+    triangle()
+    calculator()
 
-    // isLeap()
-    // getInput()
+    isLeap()
+    getInput()
     arrays()
 
 }
@@ -126,13 +126,18 @@ var name = []
 const arrays = () => {
     let arr = [1,2,3,4,5,6,8,9,9,10];
     let sum = 0;
-    for(let i = 0;i<arr.length;i++){
-        sum += i;
-    }
+    arr.forEach((num) => {
+        sum += num;
+    })
 
     let average = sum / arr.length
     let max = Math.max(...arr);
     let min = Math.min(...arr)
 
     console.log(sum, average, max, min);
+
+}
+
+function show() {
+    document.getElementById('text').innerHTML = "Hello, World!" // p tag in html file
 }
