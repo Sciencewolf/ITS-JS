@@ -55,20 +55,20 @@
         seconddiv.style.color = "blue"
 
 
-        // const item = document.getElementById('heading1') // feladat 3, nincs html kod
-        // item.style.textAlign = "left"
-        // item.style.fontSize = "15px"
-        // item.style.fontFamily = "Arial"
+        const item = document.getElementById('heading1') // feladat 3, nincs html kod, hiba lesz
+        item.style.textAlign = "left"
+        item.style.fontSize = "15px"
+        item.style.fontFamily = "Arial"
 
-        // const allItems = document.querySelectorAll('div')
-        // allItems.forEach(div => {
-        //     div.style.backgroundColor = "blue"
-        // })
+        const allItems = document.querySelectorAll('div')
+        allItems.forEach(div => {
+            div.style.backgroundColor = "blue"
+        })
 
-        // const allItems2 = document.querySelectorAll('p')
-        // allItems2.forEach(p => {
-        //     p.style.textShadow = "1px 4px"
-        // })
+        const allItems2 = document.querySelectorAll('p')
+        allItems2.forEach(p => {
+            p.style.textShadow = "1px 4px"
+        })
 
         const btn = document.querySelector('button') // 4 feladat
         btn.addEventListener('click', () => {
@@ -90,7 +90,42 @@
             // stop animation
         })
 
+
+        function check() {
+            const input = document.getElementById('input')
+            let val = input.value
+
+            if(input === null) alert('input is null')
+            if(val === "") alert("Input is empty")
+            if(val.length < 10) alert('Must be 10 chars')
+            if(val.indexOf('@') === -1) alert('Incorrect email id')
+        }
+
+        function getAge() {
+            try {
+                let age = prompt("Age")
+                if(age < 18) throw new Error("Age under 18")
+            }catch (e){
+                console.log(e);
+            }
+        }
+
+        function getNumber() {
+            try {
+                let num = prompt("number")
+                if(num < 5 || num > 20) throw new Error("Error")
+            }catch(e) {
+                console.log(e);
+            }
+
+        }
+
+        window.onload = getAge()
+        window.onload = getNumber()
         
     </script>
+
+    <input type="text" placeholder="Text here" id="input">
+    <button type="button" id="btn" onclick="check()">Submit</button>
 </body>
 </html>
